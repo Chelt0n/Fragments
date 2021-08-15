@@ -14,13 +14,13 @@ public class MainActivity extends AppCompatActivity {
 
         getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.cities, CitiesFragment.newInstance())
+                .replace(R.id.titleNote, TitleFragment.newInstance())
                 .commit();
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE) {
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.coat_of_arms, CoatOfArmsFragment.newInstance())
+                    .replace(R.id.notes, NotesFragment.newInstance(new Note("Имя заметки","Сдесь будет заметка")))
                     .commit();
         }
 
