@@ -5,23 +5,9 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Note implements Parcelable {
-    private int id;
+
     private String nameNote;
     private String Note;
-
-    public Note(int id) {
-        this.id = id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-
 
     public String getNameNote() {
         return nameNote;
@@ -39,7 +25,6 @@ public class Note implements Parcelable {
         Note = note;
     }
 
-
     public Note(String nameNote, String note) {
         this.nameNote = nameNote;
         Note = note;
@@ -49,17 +34,6 @@ public class Note implements Parcelable {
     protected Note(Parcel in) {
         nameNote = in.readString();
         Note = in.readString();
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(nameNote);
-        dest.writeString(Note);
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
     }
 
     public static final Creator<Note> CREATOR = new Creator<Note>() {
@@ -73,4 +47,15 @@ public class Note implements Parcelable {
             return new Note[size];
         }
     };
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(nameNote);
+        dest.writeString(Note);
+    }
 }

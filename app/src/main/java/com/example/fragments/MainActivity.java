@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
             getSupportFragmentManager()
                     .beginTransaction()
-                    .replace(R.id.notes, NotesFragment.newInstance(new Note("Имя заметки","Сдесь будет заметка")))
+                    .replace(R.id.notes, NotesFragment.newInstance(new Note("ss","sss")))
                     .commit();
         }
 
